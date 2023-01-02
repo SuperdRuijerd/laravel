@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +27,8 @@ Route::post('/user_create_save', [HomeController::class, 'user_create_save'])->n
 
 Route::get('/user_edit/{id}', [HomeController::class, 'user_edit'])->name('user_edit');
 Route::match(['get', 'post'],'/user_edit_save/{id}', [HomeController::class, 'user_edit_save'])->name('user_edit_save');
+
+
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logincheck', [AuthController::class, 'logincheck'])->name('logincheck');

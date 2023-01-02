@@ -15,6 +15,9 @@
             <a href="{{ route('user_create') }}">Kullanıcı Oluştur</a>
         </li>
         <li>
+            <a href="{{ route('login') }}">Giriş Yap</a>
+        </li>
+        <li>
             <a href="{{ route('contact') }}">İletişim</a>
         </li>
     </ul>
