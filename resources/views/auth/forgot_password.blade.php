@@ -16,11 +16,11 @@
                     <div class="d-flex justify-content-center">
                         <h1>Şifre Sıfırla</h1>
                     </div>
-                    <form name="login-form" method="post" action="{{ route('register_post') }}" class="form-group">
+                    <form name="login-form" method="post" action="{{ route('forgot_password_post') }}" class="form-group">
                     @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">E-posta Adresiniz</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" name="email" class="form-control" id="email">
                         </div>
                         <div class="mb-3 d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary">Şifreyi Sıfırla</button>
@@ -30,6 +30,15 @@
                             <a class="link-secondary col-md-3" href="{{ route('register') }}">Kayıt Ol</a>
                         </div>
                     </form>
+                    @if ($errors->any())
+                        <div class="mt-3 alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

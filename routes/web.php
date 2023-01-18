@@ -24,10 +24,14 @@ Route::get('/', [HomeController::class, 'dashboard'])->name('dashboard')->middle
 
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register_post', [AuthController::class, 'register_post'])->name('register_post');
+
+Route::get('/forgot_password', [AuthController::class, 'forgot_password'])->name('forgot_password');
+Route::post('/forgot_password_post', [AuthController::class, 'forgot_password_post'])->name('forgot_password_post');
 
 Route::get('/reset_password', [AuthController::class, 'reset_password'])->name('reset_password');
 Route::post('/reset_password_post', [AuthController::class, 'reset_password_post'])->name('reset_password_post');

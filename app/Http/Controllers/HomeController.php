@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function dashboard()
     {
-        echo "dashboard";
+        return view('layouts.home.dashboard');
     }
 
 }

@@ -20,30 +20,30 @@
                     @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Ad Soyad</label>
-                            <input type="name" name="name" class="form-control" id="name">
+                            <input type="name" name="name" class="form-control" id="name" value='{{ old('name') }}'>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">E-posta Adresiniz</label>
-                            <input type="email" name="email" class="form-control" id="email">
+                            <input type="email" name="email" class="form-control" id="email" value='{{ old('email') }}'>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Şifreniz</label>
                             <input type="password" name="password" class="form-control" id="password">
                         </div>
                         <div class="mb-3">
-                            <label for="confirm_password" class="form-label">Şifre Tekrar</label>
-                            <input type="password" name="confirm_password" class="form-control" id="confirm_password">
+                            <label for="password_confirmation" class="form-label">Şifre Tekrar</label>
+                            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
                         </div>
                         <div class="mb-3 d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary">Kayıt Ol</button>
                         </div>
                         <div class="row mt-3">
                             <a class="link-secondary col-md-9" href="{{ route('login') }}">Giriş Yap</a>
-                            <a class="link-secondary col-md-3" href="{{ route('reset_password') }}">Şifremi unuttum</a>
+                            <a class="link-secondary col-md-3" href="{{ route('forgot_password') }}">Şifremi unuttum</a>
                         </div>
                     </form>
                      @if ($errors->any())
-                        <div class="alert alert-danger">
+                        <div class="mt-3 alert alert-danger">
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>

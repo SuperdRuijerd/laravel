@@ -20,7 +20,7 @@
                     @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">E-posta Adresiniz</label>
-                            <input type="email" name="email" class="form-control" id="email">
+                            <input type="email" name="email" class="form-control" id="email" value="{{ old('email') }}">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Şifreniz</label>
@@ -35,9 +35,18 @@
                         </div>
                         <div class="row mt-3">
                             <a class="link-secondary col-md-9" href="{{ route('register') }}">Kayıt Ol</a>
-                            <a class="link-secondary col-md-3" href="{{ route('reset_password') }}">Şifremi unuttum</a>
+                            <a class="link-secondary col-md-3" href="{{ route('forgot_password') }}">Şifremi unuttum</a>
                         </div>
                     </form>
+                    @if ($errors->any())
+                        <div class="mt-3 alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
