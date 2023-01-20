@@ -35,8 +35,8 @@
                                 Kullanıcılar
                             </a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('list') }}">Kullanıcı Listesi</a>
-                                <a class="dropdown-item" href="{{ route('create') }}">Kullanıcı Oluştur</a>
+                                <a class="dropdown-item" href="{{ route('userslist') }}">Kullanıcı Listesi</a>
+                                <a class="dropdown-item" href="{{ route('userscreate') }}">Kullanıcı Oluştur</a>
                             </div>
                         </li>
                     </ul>
