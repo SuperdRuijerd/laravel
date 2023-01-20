@@ -7,8 +7,15 @@ use App\Models\User;
 
 class UsersController extends Controller
 {
-    public function index()
+    public function list()
     {
-        return view('layouts.users.user_list');
+        $data['users'] = User::all();
+        
+        return view('users.list', $data);
+    }
+
+    public function create()
+    {   
+        return view('users.create');
     }
 }
